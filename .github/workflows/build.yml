@@ -21,7 +21,7 @@ jobs:
         with:
           tag_name: ${{ steps.time.outputs.time }}
           body_path: README.md
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
           target_commitish: master
           draft: false
     outputs:
@@ -46,4 +46,4 @@ jobs:
           board: ${{ matrix.BOARD }}
           flavor: ${{ matrix.FLAVOR }}
           release-id: ${{ needs.prepare_release.outputs.release_id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}
