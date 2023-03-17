@@ -38,6 +38,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Set some envs
+        id: step_one
+        run: |
+          echo "expert=yes" >> $GITHUB_ENV
+          echo "desktop_appgroups_selected=\"3dsupport browsers chat desktop_tools editors email internet multimedia office programming remote_desktop\"" >> $GITHUB_ENV
       - name: Upload Armbian image
         uses: amazingfate/armbian-compile-action@main
         if: matrix.DISTRO == 'armbian'
