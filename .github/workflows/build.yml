@@ -44,7 +44,7 @@ jobs:
           echo "expert=yes" >> $GITHUB_ENV
           echo "desktop_appgroups_selected=\"3dsupport browsers chat desktop_tools editors email internet multimedia office programming remote_desktop\"" >> $GITHUB_ENV
       - name: Upload Armbian image
-        uses: amazingfate/armbian-compile-action@main
+        uses:  happyme531/armbian-compile-action@main
         if: matrix.DISTRO == 'armbian'
         with:
           branch: ${{ matrix.BRANCH }}
